@@ -666,6 +666,8 @@ Resources:
                 cp /tmp/config.php /var/www/moodle/html/config.php
                 chown -R root:apache /var/www/moodle/html
                 chown -R apache:apache /var/www/moodle/local
+                cd /var/www/moodle/html
+                sed -i '74 a $CFG->getremoteaddrconf = 0;' config.php
                 
               mode: 000500
               owner: root
